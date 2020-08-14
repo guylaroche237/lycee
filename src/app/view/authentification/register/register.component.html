@@ -1,0 +1,97 @@
+<div class="container-fluide corps">
+  
+    <div class="form container col-lg-6 col-lg-offset-4 col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      
+       <div class="card">
+                 <form #registerForm="ngForm"  class="form-signin" name="form" (ngSubmit)="register(registerForm.value)">
+                     <div class="card-img-top">
+                         <img class="profil" src="../assets/profil.jpg"  alt="" width="100" height="100">
+                     </div>
+                    
+                    <!-- <h2 class="h3">Please sign in</h2> --> 
+  
+                     <div>
+                       <h5>Register with social Network</h5>
+                       <div class="row">
+                         <div class="col-lg-6">
+                          <button type="button" class="btn btn-primary">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                          </button>
+                         
+                         </div>
+                         <div class="col-lg-6">
+                          <button type="button" class="btn btn-default">
+                            <i class="fab fa-google"></i>
+                            Google
+                          </button>
+                                                                                            
+                         </div>
+                       </div>
+                     </div>
+                     <hr>
+  
+                     <div class="error" *ngIf="error_password==true">
+                         <h6>{{message_error}}</h6>
+                     </div>
+
+            
+                     <div class="form_block">
+                        <div class="form-group">
+                            <select class="form-control" name="role" ngModel >
+                                <option>Choisir Role</option>
+                                <option>ETUDIANT</option>
+                                <option>PARENT</option>
+                                <option>ENSEIGNANT</option>
+                        
+                            </select>
+                            
+                        </div> 
+
+                   <!--  <div class="row">
+                         <div class="col-lg-6 form-group">
+                            <label for="inputEmail" class="sr-only">First Name</label>
+                            <input type="text" id="inputnom"  class="form-control" name="username" ngModel placeholder="Username.." required autofocus>
+
+                         </div>
+                         <div class="col-lg-6">
+                            <label for="inputEmail" class="sr-only">Last Name</label>
+                            <input type="text" id="inputprenom"  class="form-control" name="lastname" ngModel placeholder="Lastname .." required autofocus>
+                             
+                        </div>
+                     </div> -->
+                     <div class="form-group">
+                      <label for="inputEmail" class="sr-only">First Name</label>
+                      <input type="text" id="inputnom"  class="form-control" name="username" ngModel placeholder="Username.." required autofocus>
+
+
+                     </div>
+                     
+                     <div class="form-group">
+                        <label for="inputPassword"  class="sr-only">Email</label>
+                        <input type="email" id="email" class="form-control" name="email" ngModel placeholder="Email.." required>
+                     
+                     </div>
+                     
+                     <div class="row">
+                         <div class="col-lg-6">
+                            <label for="inputPassword"  class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" name="password" ngModel placeholder="Password" required>
+                         </div>
+                         <div class="col-lg-6">
+                            <label for="inputPassword"  class="sr-only">Comfirm Password</label>
+                            <input type="password" id="inputPassword2" class="form-control" name="password2" ngModel placeholder="Comfirm Password" required>
+                         </div>
+                     </div>
+
+                     </div>
+                     <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" [disabled]="!registerForm.valid"  type="submit"><i class="fa fa-unlock"></i>Register</button>
+                     
+                       </div>
+                     <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+                    </form>
+                </div>
+    </div>
+  </div>
+  
