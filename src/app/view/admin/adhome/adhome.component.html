@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h4 class="m-0 text-dark">
+              <a routerLink="/admin/new-classe">New Classe</a>
+          </h4>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Classes</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            
+            <div class="row">
+               
+                <div *ngFor="let salle of all_classes" class="col-lg-3">
+                    <div class="card mb-4 box-shadow" style="border-radius: 5%;box-shadow: blue;">
+                      <div class="card-header" style="background-color:black;color: white;">
+                          <h6>Salle : {{salle.nom}}</h6>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                            <strong>Id:</strong> <label>{{salle.id}}</label><br>
+                            <strong>Nombre Place:</strong> <label>{{salle.nbre}}</label><br>
+                            <strong>Professeur:</strong> <label>[ {{ salle.enseignants[0].username | slice: 0:6}},......]</label>
+                            
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-primary"><span>Voir+</span><i class="fa fa-eye"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger"><span>remove</span><i class="fa fa-scissors"></i></button>
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+    
+        </div>
+    </section>
+</div>

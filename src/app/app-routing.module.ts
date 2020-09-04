@@ -12,6 +12,14 @@ import { CoursComponent } from './view/student/cours/cours.component';
 import { CourComponent } from './view/student/cour/cour.component';
 import { ForumComponent } from './view/student/forum/forum.component';
 import { ProfilComponent } from './view/student/profil/profil.component';
+import { DashboardProfComponent } from './view/dashboard-prof/dashboard-prof.component';
+import { AcceuilComponent } from './view/enseignant/acceuil/acceuil.component';
+import { DashboardAdminComponent } from './view/dashboard-admin/dashboard-admin.component';
+import { AdhomeComponent } from './view/admin/adhome/adhome.component';
+import { MatieresbyclasseComponent } from './view/admin/matieresbyclasse/matieresbyclasse.component';
+import { ConfigmatieresbyclasseComponent } from './view/admin/configmatieresbyclasse/configmatieresbyclasse.component';
+import { NewclasseComponent } from './view/admin/newclasse/newclasse.component';
+import { AllProfComponent } from './view/admin/all-prof/all-prof.component';
 
 
 const routes: Routes = [
@@ -32,6 +40,20 @@ const routes: Routes = [
     
 
   ],},
+  {path:"enseignant",component:DashboardProfComponent,
+   children:[
+     {path:"home",component:AcceuilComponent}
+   ]  
+},
+{path:"admin",component:DashboardAdminComponent,
+ children:[
+   {path:"home",component:AdhomeComponent},
+   {path:"composbyclasse",component:MatieresbyclasseComponent},
+   {path:"configcompo",component:ConfigmatieresbyclasseComponent},
+   {path:"new-classe",component:NewclasseComponent},
+   {path:"profeusseurs",component:AllProfComponent},
+   {path:"",redirectTo:"/admin",pathMatch:"full"}
+ ]},
   {path:"",redirectTo:"/login",pathMatch:"full"}
 
 ];

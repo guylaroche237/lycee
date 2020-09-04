@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StoragedataService } from '../storagedata.service';
+import { Roles } from 'src/app/entites/roles';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,13 @@ export class AuthentificationrequestService {
   register_request(user){
     return this.http.post(this.baseUrl+"/register",user,{observe:'response'});
   }
-  //------------------ Finf User by Id -------------------------------------
+  //------------------ Find User by Id -------------------------------------
      // {headers:new HttpHeaders({'Authorization':'Bearer '+this.storage.getToken()})}
   findUserById_request(id:number){
     return this.http.get(this.baseUrl+'/user/id/'+id);
+  }
+  //----------------- Find All Teachers  ---------------------------
+  findAllTeachers_request(){
+    return this.http.get(this.baseUrl+'/users/profs');
   }
 }

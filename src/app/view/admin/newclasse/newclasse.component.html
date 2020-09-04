@@ -1,0 +1,69 @@
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">
+                  Nouvelle Classe
+              </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">New-classe</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div id="form" class="col-lg-8">
+                <p>Nouvelle Salle de Classe</p>
+               
+                <form #newclassForm="ngForm" (ngSubmit)="saveClasse(newclassForm.value)">                                      
+                        <div class="form-group">
+                            <strong>Nom Classe</strong>
+                            <input type="text" class="form-control" name="salle" ngModel>   
+                        </div>
+
+                        <div class="form-group">
+                            <strong>Nombre de place</strong>
+                            <input type="number" class="form-control" name="nbre"ngModel >
+                        </div>
+
+                        <div class="form-group">
+                            <strong>Choisir Les Professeur</strong>
+                            <hr/>
+                            <div class="row">
+                                <div *ngFor="let i of liste_prof" class="col-lg-6">
+                                    <input type="checkbox" [name] ="i.username" [value]="i.username" ngModel [id]="i.username">
+                                    <label>{{i.username | slice: 0:12}}</label>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="alert">
+                            <h6>Cette Classe a deja ete Configurer</h6>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" [disabled]="!newclassForm">SAVE</button>
+                            <button class="btn btn-danger" type="reset" >CANCEL</button>
+                        </div>
+                        <hr/>
+                
+                        
+
+                    
+                    
+                </form>
+            </div>
+
+        </div>
+    </section>
+</div>

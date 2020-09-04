@@ -1,0 +1,63 @@
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">
+                  Config Compos
+              </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Config</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <hr>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div id="form" class="col-lg-5">
+                <p> Configuration Composition Par Classe</p>
+               
+                <form #configcmpForm="ngForm" (ngSubmit)="saveData(configcmpForm.value)">                                      
+                        <div class="form-group">
+                            <strong>Choisir La Classe</strong>
+                            <select class="form-control" name="salle" ngModel>
+                                <option value="">Selectionner la classe</option>
+                                <option *ngFor ="let salle of all_classes">{{salle.nom}}</option>
+                                
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <strong>Cocher Les Matieres </strong>
+                            <div class="row">
+                                <div *ngFor="let i of all_unites" class="col-lg-6">
+                                    <input type="checkbox" [name] ="i.nom" [value]="i.nom" ngModel [id]="i.nom">
+                                    <label>{{i.nom}}</label>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="alert" *ngIf="">
+                            <h6>Cette Classe a deja ete Configurer</h6>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit"  value="upload">SAVE</button>
+                            <button class="btn btn-danger" type="reset" >CANCEL</button>
+                        </div>
+                        <hr/>   
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+

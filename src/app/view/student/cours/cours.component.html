@@ -1,3 +1,46 @@
 <div class="content-wrapper">
-    <p>Cour works!</p>
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Dashboard Student</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Cours</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let elt of [1,2,3,4,5,6,7,8]">
+                    <div class="card">
+                       <div class="card-header">
+                           <h3>Titre {{elt}}</h3>
+                       </div>
+                       <div class="card-body">
+                          <div>
+                            <img width="100%" height="150px" class="img-responsive" src="../../assets/work.jpg"/>
+                          </div>
+                          <div>
+                              <strong>Nom :</strong> <label>histoire</label><br/>
+                              <strong>Classe : </strong> <label>6 eme</label>
+                          </div>
+                          <button type="button" class="btn btn-lg btn-block btn-primary">
+                              <a>Voir Plus</a>
+                          </button>
+                       </div>
+                    </div>
+                </div>    
+            </div>
+
+        </div>
+    </section>
 </div>

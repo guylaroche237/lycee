@@ -27,6 +27,19 @@ import { CoursComponent } from './view/student/cours/cours.component';
 import { CourComponent } from './view/student/cour/cour.component';
 import { ProfilComponent } from './view/student/profil/profil.component';
 import { ForumComponent } from './view/student/forum/forum.component';
+import { DashboardAdminComponent } from './view/dashboard-admin/dashboard-admin.component';
+import { DashboardProfComponent } from './view/dashboard-prof/dashboard-prof.component';
+import { DashboardParentComponent } from './view/dashboard-parent/dashboard-parent.component';
+import { AcceuilComponent } from './view/enseignant/acceuil/acceuil.component';
+import { AdhomeComponent } from './view/admin/adhome/adhome.component';
+import { AllFonctionsService } from './services/all-fonctions.service';
+import { MatieresbyclasseComponent } from './view/admin/matieresbyclasse/matieresbyclasse.component';
+import { ConfigmatieresbyclasseComponent } from './view/admin/configmatieresbyclasse/configmatieresbyclasse.component';
+import { NewclasseComponent } from './view/admin/newclasse/newclasse.component';
+import { UniterequestService } from './services/api/uniterequest.service';
+import { ClasserequestService } from './services/api/classerequest.service';
+import { MatiereCompoBySalleRequestService } from './services/api/matiere-compo-by-salle-request.service';
+import { AllProfComponent } from './view/admin/all-prof/all-prof.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +55,16 @@ import { ForumComponent } from './view/student/forum/forum.component';
     CoursComponent,
     CourComponent,
     ProfilComponent,
-    ForumComponent
+    ForumComponent,
+    DashboardAdminComponent,
+    DashboardProfComponent,
+    DashboardParentComponent,
+    AcceuilComponent,
+    AdhomeComponent,
+    MatieresbyclasseComponent,
+    ConfigmatieresbyclasseComponent,
+    NewclasseComponent,
+    AllProfComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +76,7 @@ import { ForumComponent } from './view/student/forum/forum.component';
     MatProgressSpinnerModule
     
   ],
-  providers: [AuthentificationService,
+  providers: [AuthentificationService,AllFonctionsService,UniterequestService,ClasserequestService,MatiereCompoBySalleRequestService,
     {provide:HTTP_INTERCEPTORS,useClass:AuthinterceptorService,multi:true}
     ,StoragedataService,AuthentificationrequestService],
   bootstrap: [AppComponent]

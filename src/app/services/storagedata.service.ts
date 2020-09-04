@@ -31,5 +31,16 @@ export class StoragedataService {
   forgetUser(){
     localStorage.removeItem("token");
     localStorage.removeItem("id");
+    localStorage.removeItem('role');
+  }
+  //----------------------- save role user ----------------------
+
+  saveRoleUser(role:string){
+    localStorage.setItem('role',role);
+  }
+  //-----------------------  get role user ---------------------------
+
+  getRoleUser(){
+    return localStorage.getItem('role');
   }
 }

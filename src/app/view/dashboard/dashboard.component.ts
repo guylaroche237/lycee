@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.loadUserOnline();
     //this.route.navigateByUrl("/publications");
-    this.router.navigate(['home'],{relativeTo:this.route})
+    this.router.navigate(['home'],{relativeTo:this.route});
   }
 
   deconnection(){

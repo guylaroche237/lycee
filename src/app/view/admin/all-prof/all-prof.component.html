@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h4 class="m-0 text-dark">
+                  <a routerLink="/admin/">Ajoutez un Nouveau</a>
+              </h4>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Profs</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+
+      <section class="content">
+          <div class="container-fluid">
+
+            <div class="col-lg-12">
+                <div class="row">
+                    
+                 <div *ngFor="let pers of [1,2,3,4,5,6,7,8,9,0,9]" class="col-lg-3">
+                     <div class="card mb-4 box-shadow">
+                       <img class="card-img-top" src="../../../../assets/joel.jpg" width="100px" height="120px" alt="Card image cap">
+                       <div class="card-body">
+                         <p class="card-text">
+                             <strong>Name:</strong> <label>nom proff</label><br>
+                             <strong>Telephone:</strong> <label>tel proff</label><br>
+                             <strong>Email:</strong> <label> email prof</label>
+                             <strong>Matiere:</strong> <label> matiere prof</label>
+                         </p>
+                         <div class="d-flex justify-content-between align-items-center">
+                           <div class="btn-group">
+                             <button type="button" class="btn btn-sm btn-primary"><span>23</span><i class="fa fa-thumbs-o-up"></i></button>
+                             <button type="button" class="btn btn-sm btn-danger"><span>23</span><i class="fa fa-thumbs-o-down"></i></button>
+                           </div>
+                           <small class="text-muted">9 mins</small>
+                         </div>
+                       </div>
+                     </div>
+                    </div>
+                 </div>
+             </div>
+          </div>
+      </section>
+
+</div>

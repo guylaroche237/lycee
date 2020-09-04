@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationrequestService } from 'src/app/services/api/authentificationrequest.service';
+import { ClasserequestService } from 'src/app/services/api/classerequest.service';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +10,12 @@ import { AuthentificationrequestService } from 'src/app/services/api/authentific
 export class RegisterComponent implements OnInit {
   error_password:boolean = false;
   message_error:string = "";
-  constructor(private api_request:AuthentificationrequestService) { }
+  role:string;
+  all_classes:any;
+  constructor(private api_request:AuthentificationrequestService,public classes:ClasserequestService) { }
 
   ngOnInit() {
+    this.find_all_classes();
   }
 
   register(data){
@@ -33,6 +37,12 @@ export class RegisterComponent implements OnInit {
       this.message_error="Password Pas Identique"
       this.error_password = true;
     }
+  }
+
+  find_all_classes(){
+    this.classes.findallclasse_request().subscribe(
+      data =>{ this.all_classes = data;console.log(data);}
+    );
   }
 
 }
