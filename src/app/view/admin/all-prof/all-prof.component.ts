@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from 'src/app/services/authentification.service';
+import { AuthentificationrequestService } from 'src/app/services/api/authentificationrequest.service';
 
 @Component({
   selector: 'app-all-prof',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProfComponent implements OnInit {
 
-  constructor() { }
+  proffeusseurs:any;
+
+  constructor(private auth:AuthentificationrequestService) { }
 
   ngOnInit() {
+    this.getAllProff();
+    }
+
+  getAllProff(){
+    this.auth.findAllTeachers_request().subscribe(
+      data => { this.proffeusseurs = data ,console.log(data);},
+      error =>{}
+    );
+
   }
 
 }

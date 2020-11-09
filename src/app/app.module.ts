@@ -40,6 +40,8 @@ import { UniterequestService } from './services/api/uniterequest.service';
 import { ClasserequestService } from './services/api/classerequest.service';
 import { MatiereCompoBySalleRequestService } from './services/api/matiere-compo-by-salle-request.service';
 import { AllProfComponent } from './view/admin/all-prof/all-prof.component';
+import { PrincipalesComponent } from './view/admin/principales/principales.component';
+import { NewPrincipaleComponent } from './view/admin/new-principale/new-principale.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { AllProfComponent } from './view/admin/all-prof/all-prof.component';
     MatieresbyclasseComponent,
     ConfigmatieresbyclasseComponent,
     NewclasseComponent,
-    AllProfComponent
+    AllProfComponent,
+    PrincipalesComponent,
+    NewPrincipaleComponent
   ],
   imports: [
     BrowserModule,

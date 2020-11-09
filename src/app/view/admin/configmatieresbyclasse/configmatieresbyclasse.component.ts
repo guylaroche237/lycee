@@ -26,14 +26,14 @@ export class ConfigmatieresbyclasseComponent implements OnInit {
 
   findAllClasses(){
     this.classes.findallclasse_request().subscribe(
-      data=>{ this.all_classes = data;console.log(data);},
+      data=>{ this.all_classes = data;},
     );
 
   }
 
   findallUnites(){
     this.unites.findAllUnite_request().subscribe(
-      data => { this.all_unites = data;console.log(data);}
+      data => { this.all_unites = data;}
     );
 
   }

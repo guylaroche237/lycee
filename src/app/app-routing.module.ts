@@ -20,6 +20,8 @@ import { MatieresbyclasseComponent } from './view/admin/matieresbyclasse/matiere
 import { ConfigmatieresbyclasseComponent } from './view/admin/configmatieresbyclasse/configmatieresbyclasse.component';
 import { NewclasseComponent } from './view/admin/newclasse/newclasse.component';
 import { AllProfComponent } from './view/admin/all-prof/all-prof.component';
+import { PrincipalesComponent } from './view/admin/principales/principales.component';
+import { NewPrincipaleComponent } from './view/admin/new-principale/new-principale.component';
 
 
 const routes: Routes = [
@@ -52,6 +54,8 @@ const routes: Routes = [
    {path:"configcompo",component:ConfigmatieresbyclasseComponent},
    {path:"new-classe",component:NewclasseComponent},
    {path:"profeusseurs",component:AllProfComponent},
+   {path:"principales",component:PrincipalesComponent},
+   {path:"new-principale",component:NewPrincipaleComponent},
    {path:"",redirectTo:"/admin",pathMatch:"full"}
  ]},
   {path:"",redirectTo:"/login",pathMatch:"full"}

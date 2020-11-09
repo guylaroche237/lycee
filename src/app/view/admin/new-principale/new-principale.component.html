@@ -1,0 +1,83 @@
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-3">
+              <h4 class="m-0 text-dark">
+                  <a routerLink="/admin/new-principale">Ajoutez un Nouveau</a>
+              </h4>
+            </div>
+
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Principales</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </div>
+            <!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+
+      <div class="container">
+        <div class="row">
+           
+            <div class="col-lg-offset-3 col-lg-4">
+                <div id="tete">
+                    
+                </div>
+                <div id="form">
+                    <p> Nouveau Prof Principale</p>
+                   
+                    <form>                
+                                                  
+                            <div class="form-group">
+                                <label>Selctionez Le Proffesseur</label>
+                                <select class="form-control" name="prol" ngModel >
+                                    <option value="">Choisir Le Proffesseur</option>
+                                    <option *ngFor ="let mat of ['jean','paul']">{{mat}}</option>
+                                </select>
+                            </div>
+    
+                            <div class="form-group">
+                                <label>Selctionez La Classe</label>
+                                <select class="form-control" name="classes" ngModel >
+                                    <option value="">Choisir La Classe</option>
+                                    <option *ngFor ="let mat of ['6eme','5eme']">{{mat}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group error">
+                              <h6>Cette classe est deja Occuper</h6>
+                            </div>
+    
+    
+                            <div class="form-group">
+                                <button class="btn btn-primary" [disabled]="" value="upload">SAVE</button>
+                                <button class="btn btn-danger">CANCEL</button>
+                            </div>
+                            <hr/>
+                    
+                            
+    
+                        
+                        
+                    </form>
+                </div>
+               
+                <!--<app-share></app-share>-->
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    
+
+
+
+     
+
+</div>
+
+
